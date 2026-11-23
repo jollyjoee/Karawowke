@@ -20,9 +20,12 @@ linux:
     - AppImage
     - deb
   category: AudioVideo
-  maintainer: Karawowke <karawowke@localhost>
+  maintainer: Karawowke <karawowke@users.noreply.github.com>
+  syncDesktopName: true
+  artifactName: "Karawowke-${version}-${arch}.${ext}"
 deb:
   packageName: karawowke
+  artifactName: "karawowke_${version}_${arch}.${ext}"
 win:
   target:
     - target: portable

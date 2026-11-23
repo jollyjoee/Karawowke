@@ -1,7 +1,9 @@
 {
   "name": "@ktv/desktop",
   "version": "1.0.0",
-  "author": "Karawowke",
+  "author": "Karawowke <karawowke@users.noreply.github.com>",
+  "homepage": "https://github.com/jollyjoee/Karawowke",
+  "desktopName": "karawowke.desktop",
   "private": true,
   "type": "module",
   "description": "Karawowke Home KTV — Standalone Desktop Appliance (Linux AppImage / Windows EXE)",
