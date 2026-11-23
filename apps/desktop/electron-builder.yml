@@ -1,5 +1,6 @@
 appId: com.karawowke.ktv
 productName: Karawowke
+executableName: karawowke
 copyright: Copyright © 2026 Karawowke
 directories:
   output: release
@@ -20,6 +21,8 @@ linux:
     - deb
   category: AudioVideo
   maintainer: Karawowke <karawowke@localhost>
+deb:
+  packageName: karawowke
 win:
   target:
     - target: portable

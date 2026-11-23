@@ -13,8 +13,8 @@
     "start": "pnpm build && electron .",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "fetch-binaries": "node scripts/fetch-binaries.mjs",
-    "dist:win": "pnpm build && electron-builder --win --config electron-builder.yml",
-    "dist:linux": "pnpm build && electron-builder --linux --config electron-builder.yml"
+    "dist:win": "pnpm build && electron-builder --win --publish never --config electron-builder.yml",
+    "dist:linux": "pnpm build && electron-builder --linux --publish never --config electron-builder.yml"
   },
   "dependencies": {
     "@ktv/pi-daemon": "workspace:*",
