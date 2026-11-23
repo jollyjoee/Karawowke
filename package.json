@@ -1,0 +1,23 @@
+{
+  "name": "karawowke-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@12.21.0",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:daemon": "pnpm --filter @ktv/pi-daemon dev",
+    "dev:web": "pnpm --filter @ktv/web dev",
+    "build": "pnpm --filter @ktv/shared build && pnpm --filter @ktv/pi-daemon build && pnpm --filter @ktv/web build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "cf:typegen": "pnpm --filter @ktv/web cf:typegen",
+    "cf:preview": "pnpm --filter @ktv/web cf:preview",
+    "cf:deploy": "pnpm --filter @ktv/web cf:deploy",
+    "desktop:start": "pnpm --filter @ktv/desktop start",
+    "desktop:win": "pnpm --filter @ktv/desktop dist:win",
+    "desktop:linux": "pnpm --filter @ktv/desktop dist:linux"
+  }
+}

@@ -1,0 +1,24 @@
+# ==============================================================================
+# Cloudflare Tunnel (cloudflared) Configuration Template
+# Save to /etc/cloudflared/config.yml on the Raspberry Pi after running:
+#   cloudflared tunnel login
+#   cloudflared tunnel create karawowke-pi
+#   cloudflared tunnel route dns karawowke-pi api.yourdomain.com
+#   sudo cloudflared service install
+# ==============================================================================
+
+tunnel: <YOUR-TUNNEL-UUID>
+credentials-file: /etc/cloudflared/<YOUR-TUNNEL-UUID>.json
+
+ingress:
+  # Exposes pi-daemon HTTP API & WebSocket (/ws) securely over TLS (zero port-forwarding, CGNAT-safe)
+  - hostname: api.yourdomain.com
+    service: http://127.0.0.1:4000
+    originRequest:
+      noTLSVerify: false
+      connectTimeout: 10s
+      keepAliveTimeout: 90s
+      # WebSockets (/ws) are supported natively by cloudflared over HTTP/1.1 & HTTP/2
+
+  # Catch-all rule (required by cloudflared)
+  - service: http_status:404

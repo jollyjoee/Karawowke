@@ -1,0 +1,31 @@
+appId: com.karawowke.ktv
+productName: Karawowke
+copyright: Copyright © 2026 Karawowke
+directories:
+  output: release
+files:
+  - dist/**/*
+  - package.json
+  - "!node_modules/**/*"
+extraResources:
+  - from: resources/bin
+    to: bin
+    filter:
+      - "**/*"
+asar: false
+npmRebuild: false
+linux:
+  target:
+    - AppImage
+    - deb
+  category: AudioVideo
+  maintainer: Karawowke <karawowke@localhost>
+win:
+  target:
+    - target: portable
+      arch:
+        - x64
+mac:
+  target:
+    - dmg
+  category: public.app-category.music

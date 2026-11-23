@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+build/
+release/
+.next/
+.open-next/
+out/
+*.tsbuildinfo
+
+# Bundled desktop binaries (fetched before packaging)
+apps/desktop/resources/bin/yt-dlp*
+apps/desktop/resources/bin/ffmpeg*
+
+# Cloudflare / Wrangler local state & secrets
+.wrangler/
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Local KTV media cache & SQLite databases
+.ktv-cache/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.db
+*.db-shm
+*.db-wal
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Karawowke TV Kiosk
+Comment=Launch Karawowke fullscreen karaoke player in Chromium Kiosk Mode
+Exec=env KTV_PLAYER_URL=https://__KTV_DOMAIN__/player __REPO_DIR__/infra/pi/kiosk/start-kiosk.sh
+Terminal=false
+X-GNOME-Autostart-enabled=true

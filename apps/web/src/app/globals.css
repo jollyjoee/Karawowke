@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-chassis-950: #0b0a09;
+  --color-chassis-900: #13110e;
+  --color-chassis-850: #181511;
+  --color-chassis-800: #1f1b16;
+  --color-chassis-700: #2e2821;
+  --color-chassis-600: #453c32;
+
+  --color-ivory-50: #faf6ee;
+  --color-ivory-100: #f4ede1;
+  --color-ivory-300: #c8bca8;
+  --color-ivory-500: #8c7f6e;
+  --color-ivory-700: #5a5044;
+
+  --color-amber-tube: #f59e0b;
+  --color-amber-glow: #ffb740;
+  --color-vermilion: #e63946;
+  --color-vfd-mint: #34d399;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body {
+    background-color: #0b0a09;
+    color: #f4ede1;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Tactile anodized hardware deck panel */
+.deck-panel {
+  background: linear-gradient(180deg, rgba(31, 27, 22, 0.94) 0%, rgba(19, 17, 14, 0.98) 100%);
+  border: 1px solid rgba(244, 237, 225, 0.09);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 244, 220, 0.07),
+    0 20px 50px rgba(0, 0, 0, 0.55);
+}
+
+/* Recessed VFD (Vacuum Fluorescent Display) window */
+.vfd-screen {
+  background: linear-gradient(180deg, #070908 0%, #0d1210 100%);
+  border: 1px solid rgba(52, 211, 153, 0.22);
+  box-shadow:
+    inset 0 2px 10px rgba(0, 0, 0, 0.85),
+    0 0 24px rgba(52, 211, 153, 0.06);
+}
+
+.vfd-amber-screen {
+  background: linear-gradient(180deg, #0a0806 0%, #140f09 100%);
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  box-shadow:
+    inset 0 2px 10px rgba(0, 0, 0, 0.85),
+    0 0 24px rgba(245, 158, 11, 0.08);
+}
+
+.vfd-glow-mint {
+  text-shadow: 0 0 14px rgba(52, 211, 153, 0.45);
+}
+
+.vfd-glow-amber {
+  text-shadow: 0 0 16px rgba(245, 158, 11, 0.48);
+}
+
+/* Subtle analog film grain overlay (pure inline SVG, zero network requests) */
+.analog-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.032;
+}
+
+/* Brushed warm spotlight backdrop */
+.lounge-backdrop {
+  background:
+    radial-gradient(ellipse 65% 55% at 15% 15%, rgba(245, 158, 11, 0.14), transparent 65%),
+    radial-gradient(ellipse 55% 55% at 85% 85%, rgba(230, 57, 70, 0.10), transparent 65%),
+    radial-gradient(ellipse 50% 45% at 60% 10%, rgba(52, 211, 153, 0.05), transparent 60%),
+    #0b0a09;
+}
+
+/* Perforated lounge ticket divider */
+.ticket-perforation {
+  background-image: radial-gradient(circle, rgba(244, 237, 225, 0.22) 1.5px, transparent 1.5px);
+  background-size: 12px 1px;
+  background-repeat: repeat-x;
+}
+
+/* Custom studio range fader */
+input[type="range"].studio-fader {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+
+input[type="range"].studio-fader::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.35), rgba(244, 237, 225, 0.12));
+  border: 1px solid rgba(244, 237, 225, 0.1);
+}
+
+input[type="range"].studio-fader::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 28px;
+  margin-top: -12px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #faf6ee 0%, #c8bca8 100%);
+  border: 1px solid #0b0a09;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.65), inset 0 1px 0 #ffffff;
+  cursor: pointer;
+}
+
+input[type="range"].studio-fader::-moz-range-track {
+  height: 6px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.35), rgba(244, 237, 225, 0.12));
+  border: 1px solid rgba(244, 237, 225, 0.1);
+}
+
+input[type="range"].studio-fader::-moz-range-thumb {
+  width: 22px;
+  height: 28px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #faf6ee 0%, #c8bca8 100%);
+  border: 1px solid #0b0a09;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.65);
+  cursor: pointer;
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.75);
+  }
+  16% {
+    opacity: 1;
+    transform: translateY(0) scale(1.08);
+  }
+  80% {
+    opacity: 0.95;
+    transform: translateY(-230px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-310px) scale(0.85);
+  }
+}
+
+@keyframes slowSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes onAirPulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(230, 57, 70, 0.85);
+  }
+  50% {
+    opacity: 0.45;
+    box-shadow: 0 0 3px rgba(230, 57, 70, 0.3);
+  }
+}
+
+.animate-float-up {
+  animation: floatUp 3.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-vinyl-spin {
+  animation: slowSpin 38s linear infinite;
+}
+
+.animate-reveal {
+  animation: revealUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-on-air {
+  animation: onAirPulse 2.4s ease-in-out infinite;
+}

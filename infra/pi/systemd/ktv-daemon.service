@@ -1,0 +1,24 @@
+[Unit]
+Description=Karawowke Raspberry Pi Home KTV Media Daemon
+Documentation=https://github.com/your-org/karawowke
+After=network-online.target local-fs.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=__KTV_USER__
+WorkingDirectory=__REPO_DIR__/apps/pi-daemon
+Environment=NODE_ENV=production
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+EnvironmentFile=-/etc/ktv/daemon.env
+ExecStart=/usr/bin/node __REPO_DIR__/apps/pi-daemon/dist/index.js
+Restart=always
+RestartSec=3
+TimeoutStopSec=15
+NoNewPrivileges=true
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=ktv-daemon
+
+[Install]
+WantedBy=multi-user.target

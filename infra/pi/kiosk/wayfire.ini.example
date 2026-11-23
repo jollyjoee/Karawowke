@@ -1,0 +1,12 @@
+# ==============================================================================
+# Raspberry Pi OS Bookworm (Wayfire) Autostart Snippet
+# Append the [autostart] lines below to ~/.config/wayfire.ini if using Wayfire.
+# ==============================================================================
+
+[autostart]
+ktv_kiosk = env KTV_PLAYER_URL=https://ktv.example.com/player /home/pi/karawowke/infra/pi/kiosk/start-kiosk.sh
+
+[idle]
+# Prevent TV screen from blanking during karaoke sessions
+dpms_timeout = -1
+screensaver_timeout = -1

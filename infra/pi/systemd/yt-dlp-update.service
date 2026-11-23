@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily auto-update of yt-dlp and yt-dlp-ejs for Karawowke KTV
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/ktv-ytdlp/venv/bin/pip install --upgrade --no-cache-dir "yt-dlp[default]" yt-dlp-ejs
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=yt-dlp-update

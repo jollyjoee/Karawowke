@@ -1,0 +1,11 @@
+# Local Wrangler / Cloudflare Workers secrets (DO NOT COMMIT .dev.vars)
+# Copy this file to .dev.vars for local development.
+
+# YouTube Data API v3 Key (optional; if omitted or quota exhausted, /api/search falls back to Pi daemon yt-dlp search)
+YOUTUBE_API_KEY=
+
+# Shared token matching DAEMON_API_TOKEN on apps/pi-daemon (recommended for production Cloudflare Tunnel fallback)
+DAEMON_API_TOKEN=
+
+# Override Pi daemon API URL used by /api/search for cache badges & fallback search
+PI_DAEMON_API_URL=http://127.0.0.1:4000
